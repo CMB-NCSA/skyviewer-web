@@ -17,7 +17,7 @@
     A.init.then(() => {
     aladin = A.aladin('#aladin-lite-div',
 	             {target: "17:36:22.3 -31:59:07.2",
-                fov: 30,
+                fov: 20,
 	              reticleColor: "rgb(0, 0, 0)",
 	  	          survey: "P/DECaPS/DR2/color",
                 projection: "ZEA",
@@ -40,9 +40,9 @@
 
 
   // Create the SPT surveys for Winter 2020
-	const galaxy090GHz = aladin.createImageSurvey('SPT_galactic_coadd_090GHz_HiPS', 'SPT Galaxy 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
-	const galaxy150GHz = aladin.createImageSurvey('SPT_galactic_coadd_150GHz_HiPS', 'SPT Galaxy 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
-	const galaxy220GHz = aladin.createImageSurvey('SPT_galactic_coadd_220GHz_HiPS', 'SPT Galaxy 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
+	const galaxy090GHz = aladin.createImageSurvey('P/SPT/GALAXY-090GHZ', 'SPT Galaxy 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
+	const galaxy150GHz = aladin.createImageSurvey('P/SPT/GALAXY-150GHZ', 'SPT Galaxy 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
+	const galaxy220GHz = aladin.createImageSurvey('P/SPT/GALAXY-220GHZ', 'SPT Galaxy 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
 
 	aladin.setImageLayer(galaxy090GHz, "090GHz");
 	aladin.setImageLayer(galaxy220GHz, "220GHz");
