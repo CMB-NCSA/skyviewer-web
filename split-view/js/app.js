@@ -6,7 +6,7 @@ A.init.then(() => {
     cooFrame: 'equatorial',
     target: "00:00:00.0 -56:45:00.0",
     fullScreen: false,
-    survey: 'P/DES-DR2/ColorIRG',
+    survey: '',
     projection: "ZEA",
     showProjectionControl: false,
     showCooGridControl: false,
@@ -18,8 +18,20 @@ A.init.then(() => {
     showContextMenu: true,
     showGotoControl: true}
   );
+
+  // set the local paths for the folders
+  var hipsDir090 = `../hips/SPT_winter2020_090GHz_HiPS/`;
+  hipsDir090 = hipsDir090.substring(0,hipsDir090.lastIndexOf("/",hipsDir090.length));
+  var hipsDir150 = `../hips/SPT_winter2020_150GHz_HiPS/`;
+  hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
+  var hipsDir220 = `../hips/SPT_winter2020_220GHz_HiPS/`;
+  hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  var hipsDirDESDR2 = `../hips/DES-DR2/`;
+  hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
+
   a1.setFovRange(0.01, 175);
-  a1.setBaseImageLayer("P/DES-DR2/ColorIRG");
+  a1.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
+  a1.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
   a2 = A.aladin('#al2', {
     reticleColor: "rgb(0, 0, 0)",
@@ -27,7 +39,7 @@ A.init.then(() => {
     cooFrame: 'equatorial',
     target: "00:00:00.0 -56:45:00.0",
     fullScreen: false,
-    survey: 'P/DES-DR2/ColorIRG',
+    survey: 'P/NCSA-DES-DR2/ColorIRG',
     projection: "ZEA",
     showProjectionControl: false,
     showCooGridControl: false,
@@ -41,13 +53,6 @@ A.init.then(() => {
   );
   a2.setFovRange(0.01, 175);
 
-  // set the local paths for the folders
-  var hipsDir090 = `../hips/SPT_winter2020_090GHz_HiPS/`;
-  hipsDir090 = hipsDir090.substring(0,hipsDir090.lastIndexOf("/",hipsDir090.length));
-  var hipsDir150 = `../hips/SPT_winter2020_150GHz_HiPS/`;
-  hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
-  var hipsDir220 = `../hips/SPT_winter2020_220GHz_HiPS/`;
-  hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
 
   // Create the SPT surveys for Winter 2020
   a2.createImageSurvey('P/SPT/WINTER2020-090GHZ', 'SPT Winter2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
