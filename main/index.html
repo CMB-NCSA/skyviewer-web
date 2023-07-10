@@ -19,7 +19,7 @@
 	             {target: "00:00:00.0 -56:45:00.0",
                 fov: 90,
 	              reticleColor: "rgb(0, 0, 0)",
-	  	          survey: "P/DES-DR2/ColorIRG",
+	  	          survey: "",
                 projection: "ZEA",
                 fullScreen: true,
                 expandLayersControl: false,
@@ -30,22 +30,27 @@
                 showCooGrid: false,
                 showContextMenu: true});
 
-        var hipsDir090 = `../hips/SPT_winter2020_090GHz_HiPS/`;
-        hipsDir090 = hipsDir090.substring(0,hipsDir090.lastIndexOf("/",hipsDir090.length));
-        var hipsDir150 = `../hips/SPT_winter2020_150GHz_HiPS/`;
-        hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
-        var hipsDir220 = `../hips/SPT_winter2020_220GHz_HiPS/`;
-        hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  // set the local paths for the folders
+  var hipsDir090 = `../hips/SPT_winter2020_090GHz_HiPS/`;
+  hipsDir090 = hipsDir090.substring(0,hipsDir090.lastIndexOf("/",hipsDir090.length));
+  var hipsDir150 = `../hips/SPT_winter2020_150GHz_HiPS/`;
+  hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
+  var hipsDir220 = `../hips/SPT_winter2020_220GHz_HiPS/`;
+  hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  var hipsDirDESDR2 = `../hips/DES-DR2/`;
+  hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
+
 
   // Create the SPT surveys for Winter 2020
 	const winter090GHz = aladin.createImageSurvey('SPT_winter2020_090GHz_HiPS', 'SPT Winter2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const winter150GHz = aladin.createImageSurvey('SPT_winter2020_150GHz_HiPS', 'SPT Winter2020 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const winter220GHz = aladin.createImageSurvey('SPT_winter2020_220GHz_HiPS', 'SPT Winter2020 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+  const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
 	aladin.setImageLayer(winter090GHz, "090GHz");
 	aladin.setImageLayer(winter220GHz, "220GHz");
   aladin.setOverlayImageLayer(winter150GHz, "150GHz");
-	aladin.setBaseImageLayer("P/DES-DR2/ColorIRG");
+	aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
         // manage URL parameters
         const searchParams = new URL(document.location).searchParams;
