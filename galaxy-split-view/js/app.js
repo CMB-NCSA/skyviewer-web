@@ -6,7 +6,7 @@ A.init.then(() => {
     cooFrame: 'equatorial',
     target: "17:36:22.3 -31:59:07.2",
     fullScreen: false,
-    survey: 'P/DECaPS/DR2/color',
+    survey: '',
     projection: "ZEA",
     showProjectionControl: false,
     showCooGridControl: false,
@@ -26,9 +26,16 @@ A.init.then(() => {
   hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
   var hipsDir220 = `../hips/SPT_galactic_coadd_220GHz_HiPS/`;
   hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  var hipsDirDECaPSDR2 = `../hips/DECaPS-DR2/`;
+  hipsDirDECaPSDR2 = hipsDirDECaPSDR2.substring(0,hipsDirDECaPSDR2.lastIndexOf("/",hipsDirDECaPSDR2.length));
+
+
+
 
   a1.setFovRange(0.01, 175);
-  a1.setBaseImageLayer("P/DECaPS/DR2/color");
+  a1.createImageSurvey('P/NCSA-DECaPS/DR2/color', 'NCSA/DECaPS DR2 color', hipsDirDECaPSDR2, 'equatorial', 11, {imgFormat: 'png'});
+  a1.setBaseImageLayer("P/NCSA-DECaPS/DR2/color");
+
 
   a2 = A.aladin('#al2', {
     reticleColor: "rgb(0, 0, 0)",
@@ -36,7 +43,7 @@ A.init.then(() => {
     cooFrame: 'equatorial',
     target: "17:36:22.3 -31:59:07.2",
     fullScreen: false,
-    survey: 'P/DECaPS/DR2/color',
+    survey: '',
     projection: "ZEA",
     showProjectionControl: false,
     showCooGridControl: false,

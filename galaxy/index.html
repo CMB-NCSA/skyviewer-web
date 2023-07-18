@@ -19,7 +19,7 @@
 	             {target: "17:36:22.3 -31:59:07.2",
                 fov: 20,
 	              reticleColor: "rgb(0, 0, 0)",
-	  	          survey: "P/DECaPS/DR2/color",
+	  	          survey: "",
                 projection: "ZEA",
                 fullScreen: true,
                 expandLayersControl: false,
@@ -37,17 +37,21 @@
   hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
   var hipsDir220 = `../hips/SPT_galactic_coadd_220GHz_HiPS/`;
   hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
-
+  var hipsDirDECaPSDR2 = `../hips/DECaPS-DR2/`;
+  hipsDirDECaPSDR2 = hipsDirDECaPSDR2.substring(0,hipsDirDECaPSDR2.lastIndexOf("/",hipsDirDECaPSDR2.length));
 
   // Create the SPT surveys for Winter 2020
 	const galaxy090GHz = aladin.createImageSurvey('P/SPT/GALAXY-090GHZ', 'SPT Galaxy 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
 	const galaxy150GHz = aladin.createImageSurvey('P/SPT/GALAXY-150GHZ', 'SPT Galaxy 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
 	const galaxy220GHz = aladin.createImageSurvey('P/SPT/GALAXY-220GHZ', 'SPT Galaxy 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.8, maxCut:0.8, colormap:'viridis', imgFormat: 'fits'});
+  const NCSA_DECaPSDR2 = aladin.createImageSurvey('P/NCSA-DECaPS/DR2/color', 'NCSA/DECaPS DR2 color', hipsDirDECaPSDR2, 'equatorial', 11, {imgFormat: 'png'});
+
 
 	aladin.setImageLayer(galaxy090GHz, "090GHz");
 	aladin.setImageLayer(galaxy220GHz, "220GHz");
   aladin.setOverlayImageLayer(galaxy150GHz, "150GHz");
-	aladin.setBaseImageLayer("P/DECaPS/DR2/color");
+  aladin.setBaseImageLayer("P/NCSA-DECaPS/DR2/color");
+
 
         // manage URL parameters
         const searchParams = new URL(document.location).searchParams;
