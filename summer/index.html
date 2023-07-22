@@ -16,8 +16,8 @@
 
     A.init.then(() => {
     aladin = A.aladin('#aladin-lite-div',
-	             {target: "03:20:00.0 -27:15:00.0",
-                fov: 120,
+	             {target: "13:00:00.0 -89:00:00.0",
+                fov: 180,
 	              reticleColor: "rgb(0, 0, 0)",
 	  	          survey: "",
                 projection: "ZEA",
@@ -40,22 +40,17 @@
   var hipsDirDESDR2 = `../hips/DES-DR2/`;
   hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
 
-  var hipsDirDESI = "https://alasky.cds.unistra.fr/DES/CDS_P_DES-DR1_ColorIRG/"
-  hipsDirDESI = hipsDirDESI.substring(0,hipsDirDESI.lastIndexOf("/",hipsDirDESI.length));
-
   // Create the SPT surveys for Winter 2020
 	const summer090GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-090GHZ', 'SPT3G Summer 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const summer150GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-150GHZ', 'SPT3G Summer 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const summer220GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-220GHZ', 'SPT3G Summer 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
-  const DESI_Legacy  = aladin.createImageSurvey('P/DESI-Legacy-Surveys/DR10/color','DESI Legacy Color', "https://alasky.cds.unistra.fr/DES/CDS_P_DES-DR1_ColorIRG", 'equatorial', 11, {imgFormat: 'png'});
 
 	aladin.setImageLayer(summer090GHz, "090GHz");
 	aladin.setImageLayer(summer220GHz, "220GHz");
   aladin.setImageLayer(DESI_Legacy)
   aladin.setOverlayImageLayer(summer150GHz, "150GHz");
-//	aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
-  aladin.setBaseImageLayer("P/DESI-Legacy-Surveys/DR10/color");
+  aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
         // manage URL parameters
         const searchParams = new URL(document.location).searchParams;
