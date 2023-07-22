@@ -16,8 +16,8 @@
 
     A.init.then(() => {
     aladin = A.aladin('#aladin-lite-div',
-	             {target: "00:00:00.0 -56:45:00.0",
-                fov: 90,
+	             {target: "03:20:00.0 -27:15:00.0",
+                fov: 120,
 	              reticleColor: "rgb(0, 0, 0)",
 	  	          survey: "",
                 projection: "ZEA",
@@ -47,9 +47,9 @@
 	const summer220GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-220GHZ', 'SPT3G Summer 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
-	aladin.setImageLayer(winter090GHz, "090GHz");
-	aladin.setImageLayer(winter220GHz, "220GHz");
-  aladin.setOverlayImageLayer(winter150GHz, "150GHz");
+	aladin.setImageLayer(summer090GHz, "090GHz");
+	aladin.setImageLayer(summer220GHz, "220GHz");
+  aladin.setOverlayImageLayer(summer150GHz, "150GHz");
 	aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
         // manage URL parameters
