@@ -31,19 +31,19 @@
                 showContextMenu: true});
 
   // set the local paths for the folders
-  var hipsDir090 = `../hips/SPT_summer_coadd_090GHz_HiPS/`;
-  hipsDir090 = hipsDir090.substring(0,hipsDir090.lastIndexOf("/",hipsDir090.length));
-  var hipsDir150 = `../hips/SPT_summer_coadd_150GHz_HiPS/`;
-  hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
-  var hipsDir220 = `../hips/SPT_summer_coadd_220GHz_HiPS/`;
-  hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  var summerDir090 = `../hips/SPT_summer_coadd_090GHz_HiPS/`;
+  summerDir090 = summerDir090.substring(0,summerDir090.lastIndexOf("/",summerDir090.length));
+  var summerDir150 = `../hips/SPT_summer_coadd_150GHz_HiPS/`;
+  summerDir150 = summerDir150.substring(0,summerDir150.lastIndexOf("/",summerDir150.length));
+  var summerDir220 = `../hips/SPT_summer_coadd_220GHz_HiPS/`;
+  summerDir220 = summerDir220.substring(0,summerDir220.lastIndexOf("/",summerDir220.length));
   var hipsDirDESDR2 = `../hips/DES-DR2/`;
   hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
 
   // Create the SPT surveys for Winter 2020
-	const summer090GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-090GHZ', 'SPT3G Summer 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
-	const summer150GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-150GHZ', 'SPT3G Summer 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
-	const summer220GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-220GHZ', 'SPT3G Summer 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+	const summer090GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-090GHZ', 'SPT3G Summer 090GHz', summerDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+	const summer150GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-150GHZ', 'SPT3G Summer 150GHz', summerDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+	const summer220GHz = aladin.createImageSurvey('NCSA/P/SPT/SUMMER-220GHZ', 'SPT3G Summer 220GHz', summerDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
 	aladin.setImageLayer(summer090GHz, "090GHz");
