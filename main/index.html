@@ -48,7 +48,7 @@
 	const winter090GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-090GHZ', 'SPT3G Winter2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const winter150GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-150GHZ', 'SPT3G Winter2020 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	const winter220GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-220GHZ', 'SPT3G Winter2020 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
-  const lowell090GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-LOW_ELL-090GHZ', 'SPT3G Winter low ell 090GHz', lowellDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+  const lowell090GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-LOW_ELL-090GHZ', 'SPT3G Winter low ell 090GHz', lowellDir090, 'equatorial', 7, {minCut:-0.25, maxCut:0.25, colormap:'viridis', imgFormat: 'fits'});
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
 	aladin.setImageLayer(winter090GHz, "090GHz");

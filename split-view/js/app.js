@@ -26,6 +26,8 @@ A.init.then(() => {
   hipsDir150 = hipsDir150.substring(0,hipsDir150.lastIndexOf("/",hipsDir150.length));
   var hipsDir220 = `../hips/SPT_winter_coadd_220GHz_HiPS/`;
   hipsDir220 = hipsDir220.substring(0,hipsDir220.lastIndexOf("/",hipsDir220.length));
+  var lowellDir090 = `../hips/SPT_winter_low_ell_090GHz_HiPS/`;
+  lowellDir090 = lowellDir090.substring(0,lowellDir090.lastIndexOf("/",lowellDir090.length));
   var hipsDirDESDR2 = `../hips/DES-DR2/`;
   hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
 
@@ -61,6 +63,7 @@ A.init.then(() => {
 	a2.createImageSurvey('NCSA/P/SPT/WINTER-090GHZ', 'SPT3G Winter2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/WINTER-150GHZ', 'SPT3G Winter2020 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/WINTER-220GHZ', 'SPT3G Winter2020 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
+  a2.createImageSurvey('NCSA/P/SPT/WINTER-LOW_ELL-090GHZ', 'SPT3G Winter low ell 090GHz', lowellDir090, 'equatorial', 7, {minCut:-0.25, maxCut:0.25, colormap:'viridis', imgFormat: 'fits'});
   a2.setBaseImageLayer("NCSA/P/SPT/WINTER-150GHZ");
 
   //View.CALLBACKS_THROTTLE_TIME = 30;
