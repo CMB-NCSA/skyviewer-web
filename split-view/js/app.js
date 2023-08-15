@@ -58,7 +58,6 @@ A.init.then(() => {
 
 
   // Create the SPT surveys for Winter 2020
-  // a2.createImageSurvey('P/PLANCK/R3/HFI100')
   a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-090GHZ', 'SPT3G Wide 2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-150GHZ', 'SPT3G Wide 2020 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-220GHZ', 'SPT3G Wide 2020 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
