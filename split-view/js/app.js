@@ -34,6 +34,10 @@ A.init.then(() => {
 
   a1.setFovRange(0.01, 175);
   a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
+  a1.createImageSurvey('P/PLANCK/R3/HFI/color', 'PLANCK R2 HFI color composition 353-545-857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_Color_353_545_857/', 'galactic', 3, {imgFormat: 'jpeg'});
+  hipsDir, 'galactic', 3, {imgFormat: 'png'}));
+
+
   a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
 
   a2 = A.aladin('#al2', {
@@ -58,7 +62,6 @@ A.init.then(() => {
 
 
   // Create the SPT surveys for Winter 2020
-  a2.createImageSurvey('P/PLANCK/R3/HFI100')
   a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-090GHZ', 'SPT3G Wide 2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-150GHZ', 'SPT3G Wide 2020 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-220GHZ', 'SPT3G Wide 2020 220GHz', hipsDir220, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
