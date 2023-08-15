@@ -34,7 +34,7 @@ A.init.then(() => {
 
   a1.setFovRange(0.01, 175);
   a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
-  a1.createImageSurvey('P/PLANCK/R3/HFI/color', 'PLANCK R2 HFI color composition 353-545-857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_Color_353_545_857/', 'galactic', 3, {imgFormat: 'jpeg'});
+  a1.createImageSurvey('P/PLANCK/R3/HFI/color', 'PLANCK R3 HFI color composition 353-545-857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_Color_353_545_857/', 'galactic', 3, {imgFormat: 'png'});
   a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
 
   a2 = A.aladin('#al2', {
