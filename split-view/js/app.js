@@ -33,8 +33,8 @@ A.init.then(() => {
 
 
   a1.setFovRange(0.01, 175);
-  a1.createImageSurvey("NCSA/P/DES/Color", 'DES@NCSA DR2 Color', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
-  a1.setBaseImageLayer("NCSA/P/DES/Color");
+  a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
+  a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
 
   a2 = A.aladin('#al2', {
     reticleColor: "rgb(0, 0, 0)",
