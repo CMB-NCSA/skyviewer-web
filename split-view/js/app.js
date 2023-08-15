@@ -34,7 +34,9 @@ A.init.then(() => {
 
   a1.setFovRange(0.01, 175);
   a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
+  // Plack R2 CMB map
   a1.createImageSurvey('P/PLANCK/R3/CMB', 'PLANCK Map of the CMB fluctuations', 'https://alasky.cds.unistra.fr/PLANCK/R3/CMB-smica-R3', 'galactic', 3, {colormap:'viridis', imgFormat: 'png'});
+  // Planck R3 HFI maps
   a1.createImageSurvey('P/PLANCK/R3/HFI/color', 'PLANCK R3 HFI color composition 353-545-857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_Color_353_545_857', 'galactic', 3, {imgFormat: 'png'});
   a1.createImageSurvey('P/PLANCK/R3/HFI100', 'PLANCK R3 frequency HFI map 100 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_100_R3', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
   a1.createImageSurvey('P/PLANCK/R3/HFI143', 'PLANCK R3 frequency HFI map 143 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_143_R3', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
@@ -42,6 +44,12 @@ A.init.then(() => {
   a1.createImageSurvey('P/PLANCK/R3/HFI353', 'PLANCK R3 frequency HFI map 353 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_353_R3', 'galactic', 3, {minCut:0.00014, maxCut:0.00114, colormap:'viridis', imgFormat: 'fits'});
   a1.createImageSurvey('P/PLANCK/R3/HFI545', 'PLANCK R3 frequency HFI map 545 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_545_R3', 'galactic', 3, {minCut:0.338, maxCut:0.656, colormap:'viridis', imgFormat: 'fits'});
   a1.createImageSurvey('P/PLANCK/R3/HFI857', 'PLANCK R3 frequency HFI map 857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_857_R3', 'galactic', 3, {minCut:0.7, maxCut:1.4, colormap:'viridis', imgFormat: 'fits'});
+  // Planck R3 LFI maps
+  a1.createImageSurvey('P/PLANCK/R3/LFI/color', 'PLANCK R3 LFI Color composition 30-44-70 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/LFI_Color_30_44_70', 'galactic', 3, {imgFormat: 'png'});
+  a1.createImageSurvey('P/PLANCK/R3/LFI30', 'PLANCK R3 frequency LFI map 30 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/LFI_SkyMap_30_R3', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
+  a1.createImageSurvey('P/PLANCK/R3/LFI44', 'PLANCK R3 frequency LFI map 44 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/LFI_SkyMap_44_R3', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
+  a1.createImageSurvey('P/PLANCK/R3/LFI70', 'PLANCK R3 frequency LFI map 70 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/LFI_SkyMap_70_R3', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
+  // DES-DR2 map
   a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
 
   a2 = A.aladin('#al2', {
