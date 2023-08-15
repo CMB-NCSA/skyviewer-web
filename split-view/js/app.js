@@ -33,8 +33,8 @@ A.init.then(() => {
 
 
   a1.setFovRange(0.01, 175);
-  a1.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
-  a1.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
+  a1.createImageSurvey("NCSA/P/NCSA-DES-DR2/ColorIRG", 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
+  a1.setBaseImageLayer("NCSA/P/NCSA-DES-DR2/ColorIRG");
 
   a2 = A.aladin('#al2', {
     reticleColor: "rgb(0, 0, 0)",
@@ -42,7 +42,7 @@ A.init.then(() => {
     cooFrame: 'equatorial',
     target: "00:00:00.0 -56:45:00.0",
     fullScreen: false,
-    survey: 'P/NCSA-DES-DR2/ColorIRG',
+    survey: 'NCSA/P/NCSA-DES-DR2/ColorIRG',
     projection: "ZEA",
     showProjectionControl: false,
     showCooGridControl: false,
