@@ -36,8 +36,8 @@ A.init.then(() => {
   a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
   a1.createImageSurvey('P/PLANCK/R3/CMB', 'PLANCK Map of the CMB fluctuations', 'https://alasky.cds.unistra.fr/PLANCK/R3/CMB-smica-R3/', 'galactic', 3, {colormap:'viridis', imgFormat: 'png'});
   a1.createImageSurvey('P/PLANCK/R3/HFI/color', 'PLANCK R3 HFI color composition 353-545-857 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_Color_353_545_857/', 'galactic', 3, {imgFormat: 'png'});
-  a1.createImageSurvey('P/PLANCK/R3/HFI100', 'PLANCK R3 frequency HFI map 100 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_100_R3/', 'galactic', 3, {imgFormat: 'png'});
-  a1.createImageSurvey('P/PLANCK/R3/HFI143', 'PLANCK R3 frequency HFI map 143 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_143_R3/', 'galactic', 3, {imgFormat: 'png'});
+  a1.createImageSurvey('P/PLANCK/R3/HFI100', 'PLANCK R3 frequency HFI map 100 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_100_R3/', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
+  a1.createImageSurvey('P/PLANCK/R3/HFI143', 'PLANCK R3 frequency HFI map 143 GHz', 'https://alasky.cds.unistra.fr/PLANCK/R3/HFI_SkyMap_143_R3/', 'galactic', 3, {minCut:-0.0003, maxCut:0.0003, colormap:'viridis', imgFormat: 'fits'});
   a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
 
   a2 = A.aladin('#al2', {
