@@ -46,7 +46,7 @@
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
   var hips = A.catalogHiPS('https://axel.u-strasbg.fr/HiPSCatService/Simbad', {onClick: 'showTable', name: 'Simbad'});
-  // aladin.addCatalog(hips);
+  aladin.addCatalog(hips);
 
   aladin.setImageLayer(sptpol090GHz, "090GHz");
   aladin.setOverlayImageLayer(sptpol150GHz, "150GHz");
