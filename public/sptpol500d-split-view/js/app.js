@@ -36,7 +36,7 @@ A.init.then(() => {
 
   a2 = A.aladin('#al2', {
     reticleColor: "rgb(0, 0, 0)",
-    fov: 90,
+    fov: 60,
     cooFrame: 'equatorial',
     target: "00:00:00.0 -56:45:00.0",
     fullScreen: false,
