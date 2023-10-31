@@ -60,6 +60,10 @@ A.init.then(() => {
 	a2.createImageSurvey('NCSA/P/SPT/SPTPOL_SZ-150GHZ', 'SPTPol SZ 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.0002, maxCut:0.0002, colormap:'viridis', imgFormat: 'fits'});
   a2.setBaseImageLayer("NCSA/P/SPT/SPTPOL_SZ-150GHZ");
 
+  // comment until ready
+  var sz_hips = a2.catalogHiPS('../hips/public/sptpol500d_sz_HiPS', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol_500d_sz', color:'red', shape:'circle'});
+  a2.addCatalog(sz_hips);
+
   //View.CALLBACKS_THROTTLE_TIME = 30;
   a1.on('positionChanged', function(params) {
       a2.gotoRaDec(params.ra, params.dec);
