@@ -29,9 +29,6 @@ A.init.then(() => {
   var hipsDirDESDR2 = `../hips/public/DES-DR2/`;
   hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
 
-  var sz_hips = A.catalogHiPS('../hips/public/sptpol500d_sz_HiPS', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol_500d_sz', color:'red', shape:'circle'});
-  a1.addCatalog(sz_hips);
-
   a1.setFovRange(0.01, 175);
   a1.createImageSurvey("NCSA/P/DES/ColorIRG", 'DES/NCSA DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
   a1.setBaseImageLayer("NCSA/P/DES/ColorIRG");
@@ -61,6 +58,10 @@ A.init.then(() => {
   a2.createImageSurvey('NCSA/P/SPT/SPTPOL_SZ-090GHZ', 'SPTPol SZ 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.0002, maxCut:0.0002, colormap:'viridis', imgFormat: 'fits'});
 	a2.createImageSurvey('NCSA/P/SPT/SPTPOL_SZ-150GHZ', 'SPTPol SZ 150GHz', hipsDir150, 'equatorial', 7, {minCut:-0.0002, maxCut:0.0002, colormap:'viridis', imgFormat: 'fits'});
   a2.setBaseImageLayer("NCSA/P/SPT/SPTPOL_SZ-150GHZ");
+
+  // SZ Catalog
+  var sz_hips = A.catalogHiPS('../hips/public/sptpol500d_sz_HiPS', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol_500d_sz', color:'red', shape:'circle'});
+  a2.addCatalog(sz_hips);
 
   //View.CALLBACKS_THROTTLE_TIME = 30;
   a1.on('positionChanged', function(params) {
