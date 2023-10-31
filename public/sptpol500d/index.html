@@ -44,8 +44,8 @@
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
 
   // comment until ready
-  var hips = A.catalogHiPS('../hips/public/sz_test-HiPSCat', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol500d', color:'red', shape:'circle'});
-  aladin.addCatalog(hips);
+  var sz_hips = A.catalogHiPS('../hips/public/sz_test-HiPSCat', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol500d', color:'red', shape:'circle'});
+  aladin.addCatalog(sz_hips);
 
   aladin.setImageLayer(sptpol090GHz, "090GHz");
   aladin.setOverlayImageLayer(sptpol150GHz, "150GHz");
