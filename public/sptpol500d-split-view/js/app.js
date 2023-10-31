@@ -29,7 +29,7 @@ A.init.then(() => {
   var hipsDirDESDR2 = `../hips/public/DES-DR2/`;
   hipsDirDESDR2 = hipsDirDESDR2.substring(0,hipsDirDESDR2.lastIndexOf("/",hipsDirDESDR2.length));
 
-  var sz_hips = a1.catalogHiPS('../hips/public/sptpol500d_sz_HiPS', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol_500d_sz', color:'red', shape:'circle'});
+  var sz_hips = A.catalogHiPS('../hips/public/sptpol500d_sz_HiPS', {raField:'RA', decField:'DEC', onClick: 'showTable', name: 'sptpol_500d_sz', color:'red', shape:'circle'});
   a1.addCatalog(sz_hips);
 
   a1.setFovRange(0.01, 175);
