@@ -47,6 +47,14 @@
   var hipsDirMK = `../hips/private/MeerKAT_HiPS_D11/`;
   hipsDirMK  = hipsDirMK .substring(0,hipsDirMK .lastIndexOf("/",hipsDirMK.length));
 
+// SPIRE HiPS
+  var hipsDirSpire250 = `../hips/private/SPIRE_HiPS_250um/`;
+  hipsDirSpire250  = hipsDirSpire250 .substring(0,hipsDirSpire250 .lastIndexOf("/",hipsDirSpire250.length));
+  var hipsDirSpire350 = `../hips/private/SPIRE_HiPS_350um/`;
+  hipsDirSpire350  = hipsDirSpire350 .substring(0,hipsDirSpire350 .lastIndexOf("/",hipsDirSpire350.length));
+  var hipsDirSpire500 = `../hips/private/SPIRE_HiPS_500um/`;
+  hipsDirSpire500  = hipsDirSpire500 .substring(0,hipsDirSpire500 .lastIndexOf("/",hipsDirSpire500.length));
+
 
   // Create the SPT surveys for Winter 2020
   const wide090GHz = aladin.createImageSurvey('NCSA/P/SPT/SPT3G-WIDE-090GHZ', 'SPT3G Wide 2020 090GHz', hipsDir090, 'equatorial', 7, {minCut:-0.1, maxCut:0.1, colormap:'viridis', imgFormat: 'fits'});
@@ -55,6 +63,11 @@
   const lowell090GHz = aladin.createImageSurvey('NCSA/P/SPT/WINTER-LOW_ELL-090GHZ', 'SPT3G Winter low ell 090GHz', lowellDir090, 'equatorial', 7, {minCut:-0.25, maxCut:0.25, colormap:'viridis', imgFormat: 'fits'});
   const NCSA_DES_DR2 = aladin.createImageSurvey('P/NCSA-DES-DR2/ColorIRG', 'NCSA/DES DR2 ColorIRG', hipsDirDESDR2, 'equatorial', 11, {imgFormat: 'png'});
   const MK_SPT3G = aladin.createImageSurvey('NCSA/P/MK/MK-SPT3G', 'MeerKAT SPT3G', hipsDirMK, 'equatorial', 11, {minCut:-0.000089, maxCut:0.000087, colormap:'grayscale', imgFormat: 'fits'});
+  const SPIRE_250 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-250um', 'SPIRE-250um', hipsDirSpire250, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
+  const SPIRE_350 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-350um', 'SPIRE-350um', hipsDirSpire350, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
+  const SPIRE_500 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-500um', 'SPIRE-500um', hipsDirSpire500, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
+
+
 
   aladin.setImageLayer(wide090GHz, "090GHz");
 	aladin.setImageLayer(wide220GHz, "220GHz");
@@ -62,6 +75,7 @@
   // aladin.setImageLayer(MK_SPT3G, "MeerKAT");
   aladin.setOverlayImageLayer(wide150GHz, "150GHz");
   aladin.setOverlayImageLayer(MK_SPT3G, "MeerKAT");
+  aladin.setOverlayImageLayer(SPIRE_250, "SPIRE-250um");
 	aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
         // manage URL parameters
