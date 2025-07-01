@@ -54,6 +54,10 @@
   hipsDirSpire350  = hipsDirSpire350 .substring(0,hipsDirSpire350 .lastIndexOf("/",hipsDirSpire350.length));
   var hipsDirSpire500 = `../hips/private/SPIRE_HiPS_500um/`;
   hipsDirSpire500  = hipsDirSpire500 .substring(0,hipsDirSpire500 .lastIndexOf("/",hipsDirSpire500.length));
+// RGB color
+  var hipsDirSpireRGB = `../hips/private/SPIRE_HiPS_RGB/`;
+  hipsDirSpireRGB  = hipsDirSpireRGB .substring(0,hipsDirSpireRGB .lastIndexOf("/",hipsDirSpireRGB.length));
+
 
 
   // Create the SPT surveys for Winter 2020
@@ -66,7 +70,7 @@
   const SPIRE_250 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-250um', 'SPIRE-250um', hipsDirSpire250, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
   const SPIRE_350 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-350um', 'SPIRE-350um', hipsDirSpire350, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
   const SPIRE_500 = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-500um', 'SPIRE-500um', hipsDirSpire500, 'equatorial', 11, {minCut:-0.039, maxCut:0.064, colormap:'grayscale', imgFormat: 'fits'});
-
+  const SPIRE_RGB = aladin.createImageSurvey('NCSA/P/SPIRE/SPIRE-RGB', 'SPIRE-RGB', hipsDirSpireRGB, 'equatorial', 7, {imgFormat: 'png'});
 
 
   aladin.setImageLayer(wide090GHz, "090GHz");
@@ -75,7 +79,8 @@
   // aladin.setImageLayer(MK_SPT3G, "MeerKAT");
   aladin.setOverlayImageLayer(wide150GHz, "150GHz");
   aladin.setOverlayImageLayer(MK_SPT3G, "MeerKAT");
-  aladin.setOverlayImageLayer(SPIRE_250, "SPIRE-250um");
+//  aladin.setOverlayImageLayer(SPIRE_250, "SPIRE-250um");
+  aladin.setOverlayImageLayer(SPIRE_RGB, "SPIRE-RGB");
 	aladin.setBaseImageLayer("P/NCSA-DES-DR2/ColorIRG");
 
         // manage URL parameters
